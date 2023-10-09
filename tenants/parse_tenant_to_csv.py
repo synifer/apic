@@ -1,5 +1,5 @@
 """
-https://{{apic}}/api/mo/uni/tn-DMZ.json?rsp-subtree=full
+https://{{apic}}/api/mo/uni/tn-EXAMPLE.json?rsp-subtree=full
 
 """
 
@@ -8,7 +8,7 @@ import csv
 import re
 from pprint import pprint
 
-with open('json/tenant_cp_subtree.json', 'r') as src:
+with open('json/tenant_example_subtree.json', 'r') as src:
     data = json.load(src)
 
 rows = []
@@ -70,7 +70,7 @@ for item in data['imdata']:
     
 
 
-with open('csv/tenant_cp_contracts.csv', 'w', newline='') as dst:
+with open('csv/tenant_example_contracts.csv', 'w', newline='') as dst:
     writer = csv.writer(dst)
     writer.writerow(['Tenant', 'Contract Name', 'Provider VRF', 'Provider BD', 'Provider APP', 'Provider EPG', 'Consumer VRF', 'Consumer BD','Consumer APP', 'Consumer EPG', 'Subject', 'Filter', 'Filter Tenant'])
     for row in rows:    
